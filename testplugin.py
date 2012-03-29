@@ -1,5 +1,5 @@
-import emuplugin
+from emuplugin import EmuPlugin
 
 class TestPlugin(EmuPlugin):
     def tick(self):
-        print ("Tick")
+        print "Tick:", self.cpu.registers

@@ -12,6 +12,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 from dcpucore import DCPUCore
+from testplugin import TestPlugin
 
 def load_plugins(plugins, core):
     if not plugins:
@@ -43,7 +44,7 @@ def shutdown_plugins(plugins):
 
 def main():
     try:
-        plugins = []
+        plugins = [TestPlugin]
         core = DCPUCore()
         plugins = load_plugins(plugins, core)
         running = True
