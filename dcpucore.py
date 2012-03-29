@@ -71,6 +71,10 @@ class DCPUCore(DCPU_Values, DCPU_OpCodes, DCPUCore_Options, threading.Thread):
                 and a default value
         """
         return array.array(typestr, [default] * size)
+
+    def set_mem(self, start, blob):
+        for offset in range(len(blob)):
+            self.memory[start + offset] = blob[offset]
     
     def _init_cpu(self, size, num_registers):
         """
